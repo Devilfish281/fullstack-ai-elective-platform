@@ -1,0 +1,17 @@
+[tool.poetry]
+name = "asset-processing-service-ai"
+version = "0.1.0"
+description = ""
+authors = ["Devilfish281 <Dobley@csu.fullerton.edu>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+
+[tool.poetry.scripts]  
+asset-processing-service-ai = "asset_processing_service_ai.main:main"  
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
