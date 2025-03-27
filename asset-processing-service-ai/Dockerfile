@@ -24,4 +24,8 @@ COPY . /app
 # asset-processing-service-ai = "asset_processing_service_ai.main:main"  
 #poetry run asset-processing-service-ai
 
-CMD ["poetry", "run", "asset-processing-service-ai"]
+#CMD ["poetry", "run", "asset-processing-service-ai"]
+
+# Set the entrypoint and default command
+ENTRYPOINT ["poetry", "run"]  # Added Code
+CMD ["asset-processing-service-ai"]  # Changed Code
