@@ -7,7 +7,7 @@ interface ProjectPageProps {
   };
 }
 
-export default function ProjectPage({ params }: ProjectPageProps) {
+export default async function ProjectPage({ params }: ProjectPageProps) {
   if (params.projectId != "123") return notFound();
 
   return <div>ProjectPage: {params.projectId} </div>;
