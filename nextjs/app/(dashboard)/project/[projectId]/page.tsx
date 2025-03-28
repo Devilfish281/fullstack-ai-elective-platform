@@ -8,7 +8,7 @@ interface ProjectPageProps {
 }
 
 export default async function ProjectPage({ params }: ProjectPageProps) {
-  if (params.projectId != "123") return notFound();
-
-  return <div>ProjectPage: {params.projectId} </div>;
+  const { projectId } = await Promise.resolve(params);
+  if (projectId !== "123") return notFound();
+  return <div>ProjectPage: {projectId} </div>;
 }

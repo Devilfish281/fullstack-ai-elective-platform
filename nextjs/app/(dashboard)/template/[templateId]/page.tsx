@@ -8,7 +8,7 @@ interface TemplatePageProps {
 }
 
 export default async function TemplatePage({ params }: TemplatePageProps) {
-  if (params.templateId != "123") return notFound();
-
-  return <div>TemplatePage: {params.templateId} </div>;
+  const { templateId } = await Promise.resolve(params);
+  if (templateId !== "123") return notFound();
+  return <div>TemplatePage: {templateId} </div>;
 }
