@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 7, "column": 0}, "map": {"version":3,"sources":["file://C%3A/Users/ME/Documents/nextjs/fullstack-ai-elective-platform/nextjs/components/SideBar.tsx"],"sourcesContent":["import React from \"react\";\r\n\r\nfunction SideBar() {\r\n  return (\r\n    <div className=\"w-28 h-screen bg-white text-black border-r border-gray-200\">\r\n      SideBar\r\n    </div>\r\n  );\r\n}\r\n\r\nexport default SideBar;\r\n"],"names":[],"mappings":";;;;;AAEA,SAAS;IACP,qBACE,8OAAC;QAAI,WAAU;kBAA6D;;;;;;AAIhF;uCAEe","debugId":null}},
+    {"offset": {"line": 29, "column": 0}, "map": {"version":3,"sources":["file://C%3A/Users/ME/Documents/nextjs/fullstack-ai-elective-platform/nextjs/app/%28dashboard%29/layout.tsx"],"sourcesContent":["import SideBar from \"@/components/SideBar\";\r\n\r\nexport default function DashboardLayout({\r\n  children,\r\n}: {\r\n  children: React.ReactNode;\r\n}) {\r\n  return (\r\n    <div className=\"flex flex-row  bg-gray-100\">\r\n      {/* TODO: Add a sidebar to the left*/}\r\n      <SideBar />\r\n      {children}\r\n    </div>\r\n  );\r\n}\r\n"],"names":[],"mappings":";;;;AAAA;;;AAEe,SAAS,gBAAgB,EACtC,QAAQ,EAGT;IACC,qBACE,8OAAC;QAAI,WAAU;;0BAEb,8OAAC,sHAAA,CAAA,UAAO;;;;;YACP;;;;;;;AAGP","debugId":null}}]
+}

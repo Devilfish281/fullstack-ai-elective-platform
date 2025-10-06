@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 6, "column": 0}, "map": {"version":3,"sources":[],"names":[],"mappings":"","debugId":null}},
+    {"offset": {"line": 42, "column": 0}, "map": {"version":3,"sources":["file://C%3A/Users/ME/Documents/nextjs/fullstack-ai-elective-platform/nextjs/app/%28dashboard%29/template/%5BtemplateId%5D/page.tsx"],"sourcesContent":["import { notFound } from \"next/navigation\";\r\nimport React from \"react\";\r\n\r\ninterface TemplatePageProps {\r\n  params: Promise<{ templateId: string }>; // Changed Code\r\n}\r\n\r\nexport default async function TemplatePage({ params }: TemplatePageProps) {\r\n  const { templateId } = await params; // Changed Code\r\n  if (templateId !== \"123\") return notFound(); // Changed Code\r\n  return <div>TemplatePage: {templateId} </div>;\r\n}\r\n"],"names":[],"mappings":";;;;AAAA;AAAA;;;AAOe,eAAe,aAAa,EAAE,MAAM,EAAqB;IACtE,MAAM,EAAE,UAAU,EAAE,GAAG,MAAM,QAAQ,eAAe;IACpD,IAAI,eAAe,OAAO,OAAO,CAAA,GAAA,qLAAA,CAAA,WAAQ,AAAD,KAAK,eAAe;IAC5D,qBAAO,8OAAC;;YAAI;YAAe;YAAW;;;;;;;AACxC","debugId":null}}]
+}

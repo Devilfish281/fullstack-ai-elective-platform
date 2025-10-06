@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 6, "column": 0}, "map": {"version":3,"sources":[],"names":[],"mappings":"","debugId":null}},
+    {"offset": {"line": 24, "column": 0}, "map": {"version":3,"sources":["file://C%3A/Users/ME/Documents/nextjs/fullstack-ai-elective-platform/nextjs/app/page.tsx"],"sourcesContent":["import Image from \"next/image\";\n\nexport default function Home() {\n  return (\n    <div>\n      <div className=\"bg-red-500 text-white\">\n        Hello Matthew from new project\n      </div>\n      <button className=\"bg-blue-500 text-white\">Button</button>\n      <h1>Next.js + TypeScript</h1>\n      <Image src=\"/logo.png\" alt=\"Vercel Logo\" width={72} height={16} />\n    </div>\n  );\n}\n"],"names":[],"mappings":";;;;AAAA;;;AAEe,SAAS;IACtB,qBACE,8OAAC;;0BACC,8OAAC;gBAAI,WAAU;0BAAwB;;;;;;0BAGvC,8OAAC;gBAAO,WAAU;0BAAyB;;;;;;0BAC3C,8OAAC;0BAAG;;;;;;0BACJ,8OAAC,6HAAA,CAAA,UAAK;gBAAC,KAAI;gBAAY,KAAI;gBAAc,OAAO;gBAAI,QAAQ;;;;;;;;;;;;AAGlE","debugId":null}}]
+}
