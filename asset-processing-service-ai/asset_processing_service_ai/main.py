@@ -87,8 +87,8 @@ if TYPE_CHECKING:
 
 
 # Explicit module-level globals so other functions can guard against uninitialized state
-model: Optional["ChatOpenAI"] = None  # Added Code
-prompt_template: Optional[Any] = None  # Added Code
+model: Optional["ChatOpenAI"] = None
+prompt_template: Optional[Any] = None
 
 
 load_dotenv()
@@ -296,15 +296,27 @@ class AdvisorRetStatus(BaseModel):
     raw: Optional[str] = None  # optional: raw JSON string from the model
 
 
+# typed config with Pydantic Settings (commented out for now)
+# from pydantic_settings import BaseSettings
+
+# class Settings(BaseSettings):
+#     AI_ENABLED: bool = False
+#     OPENAI_API_KEY: str | None = None
+#     class Config:
+#         env_file = ".env"
+
+
+# settings = Settings()
+# ai_enabled = settings.AI_ENABLED
 ##################################################################
 # Existing code for AI recommendations STARTS HERE
 ##################################################################
 # --- add near your imports ---
-def parse_bool_env(name: str, default: bool = False) -> bool:  # Added Code
-    """Parse a boolean-like environment variable (1/true/t/yes/on)."""  # Added Code
-    val = os.getenv(name)  # Added Code
-    if val is None:  # Added Code
-        return default  # Added Code
+def parse_bool_env(name: str, default: bool = False) -> bool:
+    """Parse a boolean-like environment variable (1/true/t/yes/on)."""
+    val = os.getenv(name)
+    if val is None:
+        return default
     return str(val).strip().lower() in {
         "1",
         "true",
@@ -312,7 +324,7 @@ def parse_bool_env(name: str, default: bool = False) -> bool:  # Added Code
         "yes",
         "y",
         "on",
-    }  # Added Code
+    }
 
 
 def _find_courses_json() -> Path:
