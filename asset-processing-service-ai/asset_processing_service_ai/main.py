@@ -18,7 +18,7 @@
 ################################################
 # Docker Commands
 ################################################
-# docker run -d -p 8000:5000 -e OPENAI_API_KEY=<your_api_key> --name asset-service100-c asset-service100
+# docker run -d -p 8000:5000 -e OPENAI_API_KEY=sk-... -e AI_ENABLED=true --name asset-service100-c asset-service100
 # docker run -d -p 8000:5000  --name asset-service100-c asset-service100
 
 # B) Build the image (from the folder with your Dockerfile)
@@ -299,6 +299,22 @@ class AdvisorRetStatus(BaseModel):
 ##################################################################
 # Existing code for AI recommendations STARTS HERE
 ##################################################################
+# --- add near your imports ---
+def parse_bool_env(name: str, default: bool = False) -> bool:  # Added Code
+    """Parse a boolean-like environment variable (1/true/t/yes/on)."""  # Added Code
+    val = os.getenv(name)  # Added Code
+    if val is None:  # Added Code
+        return default  # Added Code
+    return str(val).strip().lower() in {
+        "1",
+        "true",
+        "t",
+        "yes",
+        "y",
+        "on",
+    }  # Added Code
+
+
 def _find_courses_json() -> Path:
     """Locate the bundled ``courses.json`` data file.
 
@@ -893,8 +909,7 @@ def get_recommendations_ai(
     """
     logging.info(f"Job ID: {job_id}, Job Name: {job_name}, Degree Name: {degree_name}")
 
-    # ai_enabled = parse_bool_env("AI_ENABLED", default=False)
-    ai_enabled = False
+    ai_enabled = parse_bool_env("AI_ENABLED", default=False)
     logging.info(f"AI_ENABLED={ai_enabled}")
 
     try:
